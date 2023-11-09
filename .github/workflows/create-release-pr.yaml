@@ -34,6 +34,6 @@ jobs:
           git add .
           git commit -m "Update version to ${VERSION}"
           git push --set-upstream origin --force ${BRANCH} 
-          url=$(gh pr create --title "Release v${VERSION}" --body "Release prepared for ${VERSION}"
+          gh pr create --title "Release v${VERSION}" --body "Release prepared for ${VERSION}"
         env:
           GH_TOKEN: ${{ steps.app_token.outputs.token }}
